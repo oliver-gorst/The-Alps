@@ -7,13 +7,21 @@
 
 import SwiftUI
 
+let backgroundGradient = LinearGradient(
+    gradient: Gradient(colors: [Color.pink, Color.yellow]),
+    startPoint: .top, endPoint: .bottom)
+
 struct ContentView: View {
     var body: some View {
-        VStack{
-        Text("Hello, world!!")
-            .padding()
-        Text("Project here")
-        }
+        ZStack{
+        backgroundGradient
+            VStack{
+                Text("Hello, world!")
+                    .padding()
+                Text("Project here")
+                }
+            }
+        .ignoresSafeArea()
     }
 }
 
